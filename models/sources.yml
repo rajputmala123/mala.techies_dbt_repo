@@ -1,0 +1,19 @@
+version: 2
+sources:
+  - name: my_dim_sources
+    schema: ZOMATO_METRICS
+    tables:
+      - name: DIM_DELIVERY_PERSON
+      - name: DIM_DELIVERY_PERSON_RATING
+      - name: DIM_DELIVERY_TIME_TAKEN
+  - name: my_raw_sources
+    schema: ZOMATO_METRICS
+    tables:
+      - name: RAW_DELIVERY
+      - name: RAW_ORDERS
+      - name: RAW_RESTAURENT
+  - name: staging   # logical source name
+    schema: ZOMATO_METRICS        # schema in your warehouse
+    tables:
+      - name: STG_DELIVERY        # table name in the warehouse
+        description: "Staging table for Zomato delivery metrics"
